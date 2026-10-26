@@ -94,42 +94,7 @@ I have **not** yet run a pilot with blind students or teachers. I'm not reportin
 
 ## 5. The Digital-to-Physical Workflow
 
-```
-+--------------------------------------------------------------------------+
-| 1. Sighted teacher types Uzbek Latin text (web app)                      |
-|    - Instant deterministic transliteration, works offline                |
-|    - Speech-synced check with cell highlighting                          |
-|    - Swell simulation previews margins and raised dots                   |
-+--------------------------------------------------------------------------+
-                                     |
-                                     v
-+--------------------------------------------------------------------------+
-| 2. Exact-scale SVG export or browser print                               |
-|    - Marburg Medium: 2.5 mm dot pitch, 0.75 mm dot radius                |
-|    - 50 mm calibration ruler on every sheet                              |
-|    - Tactile page header and Braille page numbers (⠼⠁)                   |
-|    - Pure black dots only, no borders or stray ink                       |
-+--------------------------------------------------------------------------+
-                                     |
-                                     v
-+--------------------------------------------------------------------------+
-| 3. Teacher checks the 50 mm ruler on the printed swell paper             |
-|    - Catches hidden "Fit to page" printer scaling                        |
-|    - Before any heat is applied                                          |
-+--------------------------------------------------------------------------+
-                                     |
-                                     v
-+--------------------------------------------------------------------------+
-| 4. Heat fuser (e.g. PIAF)                                                |
-|    - Black ink absorbs heat; capsules under the dots swell up            |
-+--------------------------------------------------------------------------+
-                                     |
-                                     v
-+--------------------------------------------------------------------------+
-| 5. Blind student reads the sheet by touch                                |
-|    - Same Latin-script content as sighted classmates                     |
-+--------------------------------------------------------------------------+
-```
+![The AlifBraille workflow: 1. the teacher types Uzbek Latin text, 2. exact-scale export or print, 3. the teacher checks the 50 mm ruler, 4. the heat fuser raises the dots, 5. a blind student reads the sheet by touch](workflow.svg)
 
 ---
 
