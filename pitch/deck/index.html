@@ -1,0 +1,348 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlifBraille Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>:root{
+  --paper:#f4efe4; --card:#fffcf6; --ink:#17140f; --ink2:#39332a; --muted:#5c5447;
+  --line:rgba(70,52,22,.14); --line2:rgba(70,52,22,.24);
+  --blue:#1e3fae; --gold:#f2b705; --gold2:#d99a00; --red:#b42318;
+  --display:"Fraunces",Georgia,serif; --ui:"Public Sans",-apple-system,"Segoe UI",sans-serif;
+}
+@page{ size:1920px 1080px; margin:0 }
+*{ box-sizing:border-box }
+html,body{ margin:0; background:#ddd5c6 }
+body{ font-family:var(--ui); color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact }
+.slide{
+  width:1920px; height:1080px; position:relative; overflow:hidden;
+  padding:96px 120px 120px; margin:0 auto 24px;
+  background:
+    radial-gradient(1100px 520px at 92% -8%, rgba(242,183,5,.20), transparent 62%),
+    radial-gradient(900px 480px at -8% 108%, rgba(30,63,174,.08), transparent 60%),
+    var(--paper);
+  page-break-after:always; break-after:page;
+}
+@media print{ .slide{ margin:0 } body{ background:none } }
+.slide::before{ /* embossed dot texture */
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background-image:radial-gradient(rgba(70,52,22,.07) 1.4px, transparent 1.8px);
+  background-size:28px 28px; mask-image:linear-gradient(180deg, transparent 0%, #000 70%);
+}
+.slide > *{ position:relative }
+footer{ position:absolute; left:120px; right:120px; bottom:44px; display:flex; align-items:center; gap:18px;
+  font-size:20px; color:var(--muted); border-top:1px solid var(--line); padding-top:20px }
+footer .pg{ margin-left:auto; font-variant-numeric:tabular-nums; font-weight:600 }
+
+/* type */
+.eyebrow,.kicker{ display:inline-block; font-size:22px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink2); margin:0 0 26px }
+.kicker{ padding:8px 18px; border-radius:999px; background:rgba(242,183,5,.2); border:1px solid rgba(217,154,0,.38) }
+.eyebrow{ color:var(--blue) }
+h1,h2,h3{ font-family:var(--display); font-weight:650; letter-spacing:-.025em; margin:0 }
+.mega{ font-size:150px; line-height:.95; letter-spacing:-.04em }
+h1 em,h2 em{ font-style:italic; font-weight:500; color:var(--blue) }
+h2{ font-size:84px; line-height:1.02; margin-bottom:48px }
+h3{ font-size:38px; line-height:1.15; margin-bottom:12px }
+p{ margin:0 }
+.lede{ font-size:36px; line-height:1.4; color:var(--ink2); max-width:900px; margin-top:44px }
+.byline{ font-size:26px; color:var(--muted); margin-top:56px }
+.byline strong{ color:var(--ink) }
+.body{ font-size:31px; line-height:1.5; color:var(--ink2) }
+.body em{ color:var(--blue); font-style:normal; font-weight:700 }
+.caption,.note{ font-size:22px; color:var(--muted) }
+.note{ margin-top:34px }
+
+/* braille cells */
+.cells{ display:inline-flex; gap:12px; flex-wrap:nowrap; align-items:flex-end }
+.cell{ display:inline-flex; flex-direction:column; align-items:center; gap:10px; padding:16px 14px;
+  background:linear-gradient(180deg,#fff,#fbf6ec); border:1px solid rgba(70,52,22,.13); border-radius:16px;
+  box-shadow:0 1px 0 #fff inset, 0 2px 3px rgba(70,52,22,.08), 0 10px 22px -12px rgba(70,52,22,.35) }
+.cell b{ font-family:var(--ui); font-size:26px; color:var(--ink2); line-height:1 }
+.dots{ display:grid; grid-template-columns:repeat(2,22px); grid-auto-rows:22px; gap:10px 12px }
+.dots i{ display:block; border-radius:50%; box-shadow:inset 0 1.5px 2px rgba(70,52,22,.25); border:1px solid rgba(70,52,22,.1) }
+.dots i.on{ background:radial-gradient(circle at 35% 30%,#6b6255 0%,#2a251d 45%,#0f0d09 100%); border:0;
+  box-shadow:0 2px 2px rgba(23,20,15,.35), 0 0 0 1px rgba(23,20,15,.15) }
+.cell.xl{ padding:30px 26px; border-radius:26px; gap:18px }
+.cell.xl b{ font-size:44px; font-family:var(--display) }
+.cell.xl .dots{ grid-template-columns:repeat(2,46px); grid-auto-rows:46px; gap:22px 26px }
+.cell.sm{ padding:10px 9px; border-radius:11px; gap:0 }
+.cell.sm .dots{ grid-template-columns:repeat(2,13px); grid-auto-rows:13px; gap:7px 8px }
+.cell.xs{ padding:5px 5px; border-radius:6px; gap:0; box-shadow:none }
+.cell.xs .dots{ grid-template-columns:repeat(2,5px); grid-auto-rows:5px; gap:3px 3px }
+.cell.xs .dots i{ box-shadow:none; border:1px solid rgba(70,52,22,.15) }
+.cell.xs .dots i.on{ border:0 }
+.fmark .cells{ gap:4px }
+
+/* 1 title */
+.title-grid{ display:grid; grid-template-columns:1.25fr .9fr; gap:60px; align-items:center; height:100% }
+.hero-cells{ display:flex; flex-direction:column; align-items:center; gap:30px }
+.hero-cells .cells{ gap:20px; transform:rotate(-4deg) }
+
+/* 2 problem */
+.three{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:28px; padding:40px 40px 44px;
+  box-shadow:0 1px 0 #fff inset, 0 24px 48px -30px rgba(70,52,22,.45) }
+.card p{ font-size:28px; line-height:1.45; color:var(--ink2) }
+.num{ display:block; font-family:var(--display); font-size:64px; color:var(--gold2); margin-bottom:16px; font-weight:650 }
+.bottom-line{ margin-top:52px; font-size:34px; line-height:1.4; font-family:var(--display); font-style:italic; color:var(--ink); max-width:1500px;
+  border-left:8px solid var(--gold); padding-left:30px }
+
+/* 3 compare */
+.cmp{ background:var(--card); border:1px solid var(--line); border-radius:28px; overflow:hidden; box-shadow:0 24px 48px -30px rgba(70,52,22,.45) }
+.cmp-head,.cmp-row{ display:grid; grid-template-columns:260px 560px 440px 1fr; gap:28px; align-items:center; padding:24px 40px }
+.cmp-head{ font-size:20px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); background:rgba(70,52,22,.04); border-bottom:1px solid var(--line) }
+.cmp-row + .cmp-row{ border-top:1px solid var(--line) }
+.word span{ display:block; font-family:var(--display); font-size:46px; font-weight:650 }
+.word small{ font-size:22px; color:var(--muted) }
+.bad .cell{ background:#fff5f3; border-color:rgba(180,35,24,.35) }
+.bad .dots i.on{ background:radial-gradient(circle at 35% 30%,#d06a5f,#9c2318 60%,#6e140c) }
+.good .cell{ border-color:rgba(30,63,174,.35); box-shadow:0 0 0 3px rgba(30,63,174,.1) }
+.why{ font-size:25px; line-height:1.4; color:var(--ink2) }
+.cmp .cells{ gap:8px }
+
+/* split layouts */
+.split{ display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; height:100% }
+.split.rev{ grid-template-columns:.95fr 1.05fr }
+.shot{ margin:0; border-radius:26px; overflow:hidden; background:var(--card); border:1px solid var(--line2);
+  box-shadow:0 2px 0 #fff inset, 0 40px 80px -36px rgba(40,30,12,.55) }
+.shot img{ display:block; width:100%; height:auto }
+.shot.tilt{ transform:perspective(1800px) rotateY(-9deg) rotateX(3deg); transform-origin:left center; width:118% }
+.s-teach .shot, .s-print .shot{ max-height:860px }
+.s-teach .shot img, .s-print .shot img{ height:860px; width:100%; object-fit:cover; object-position:top }
+.s-exam .shot img{ width:100% }
+.steps{ list-style:none; counter-reset:s; padding:0; margin:0 0 40px }
+.steps li{ counter-increment:s; position:relative; padding-left:84px; font-size:30px; line-height:1.45; color:var(--ink2); margin-bottom:26px }
+.steps li::before{ content:counter(s); position:absolute; left:0; top:-2px; width:56px; height:56px; border-radius:50%;
+  background:var(--ink); color:#fff; display:grid; place-items:center; font-weight:700; font-size:26px }
+.steps li:nth-child(2)::before{ background:var(--gold); color:var(--ink) }
+.steps li:nth-child(3)::before{ background:var(--blue) }
+.steps b,.ticks b,.asks b{ color:var(--ink) }
+.pill-row{ display:flex; gap:14px; flex-wrap:wrap }
+.pill-row span,.measure span{ font-size:22px; font-weight:600; padding:10px 20px; border-radius:999px; background:var(--card); border:1px solid var(--line2); color:var(--ink2) }
+.callout{ margin-top:44px; display:flex; gap:30px; align-items:center; background:var(--card); border:1px solid var(--line); border-left:8px solid var(--gold); border-radius:22px; padding:28px 34px; font-size:27px; line-height:1.4; color:var(--ink2) }
+.callout .big{ font-size:110px; line-height:1; color:var(--ink) }
+.specs{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-bottom:40px }
+.specs div{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:24px 28px; font-size:24px; color:var(--muted) }
+.specs span{ display:block; font-family:var(--display); font-size:58px; font-weight:650; color:var(--ink); line-height:1.1 }
+.ticks,.todo{ list-style:none; padding:0; margin:0 }
+.ticks li,.todo li{ position:relative; padding-left:56px; font-size:29px; line-height:1.45; color:var(--ink2); margin-bottom:22px }
+.ticks li::before{ content:"✓"; position:absolute; left:0; top:2px; width:38px; height:38px; border-radius:50%; background:var(--ink); color:var(--gold); display:grid; place-items:center; font-size:22px; font-weight:700 }
+.todo li::before{ content:""; position:absolute; left:4px; top:9px; width:28px; height:28px; border-radius:50%; border:3px dashed var(--line2) }
+
+/* 8 proof */
+.proof{ display:grid; grid-template-columns:1.35fr 1fr; gap:48px }
+.stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px }
+.stats div{ background:var(--card); border:1px solid var(--line); border-radius:24px; padding:30px 30px 32px; font-size:23px; color:var(--muted); line-height:1.3;
+  box-shadow:0 20px 40px -30px rgba(70,52,22,.45) }
+.stats span{ display:block; font-family:var(--display); font-size:76px; font-weight:650; color:var(--ink); line-height:1.05; margin-bottom:8px }
+.stats div:first-child span{ color:var(--blue) }
+.status{ background:var(--ink); color:#f4efe4; border-radius:28px; padding:40px 44px }
+.status h3{ color:var(--gold); font-size:34px; margin-bottom:20px }
+.status h3.next{ margin-top:30px; color:#cfc6b6 }
+.status .ticks li,.status .todo li{ color:#efe8da; font-size:26px; margin-bottom:14px }
+.status .ticks li::before{ background:var(--gold); color:var(--ink) }
+.status .todo li::before{ border-color:rgba(255,255,255,.35) }
+
+/* 9 road */
+.road{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:10px }
+.road::before{ content:""; position:absolute; left:0; right:0; top:38px; height:4px; background:linear-gradient(90deg,var(--ink),var(--gold),var(--blue)); border-radius:4px }
+.ph{ padding:84px 28px 0 0; position:relative }
+.ph::before{ content:""; position:absolute; left:0; top:24px; width:32px; height:32px; border-radius:50%; background:var(--card); border:6px solid var(--ink) }
+.ph:nth-child(2)::before{ border-color:#8a6a10 } .ph:nth-child(3)::before{ border-color:var(--gold2) } .ph:nth-child(4)::before{ border-color:var(--blue) }
+.when{ font-size:22px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted) }
+.ph h3{ margin-top:12px }
+.ph p{ font-size:26px; line-height:1.45; color:var(--ink2) }
+.measure{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:64px; font-size:26px }
+.measure b{ margin-right:8px }
+
+/* 10 ask */
+.ask-grid{ display:grid; grid-template-columns:1.45fr .8fr; gap:90px; align-items:center; height:100% }
+.s-ask h2{ font-size:70px }
+.asks{ padding-left:0; list-style:none; counter-reset:a; margin-top:34px }
+.asks li{ counter-increment:a; font-size:29px; line-height:1.45; color:var(--ink2); margin-bottom:16px; padding-left:62px; position:relative }
+.asks li::before{ content:counter(a); position:absolute; left:0; top:2px; width:42px; height:42px; border-radius:12px; background:var(--gold); color:var(--ink); font-weight:700; display:grid; place-items:center; font-size:22px }
+.contact{ background:var(--card); border:1px solid var(--line2); border-radius:32px; padding:52px; text-align:center; box-shadow:0 40px 80px -40px rgba(40,30,12,.55) }
+.qr svg{ width:100%; height:auto; display:block }
+.url{ font-family:var(--display); font-size:46px; font-weight:650; margin-top:32px }
+.small{ font-size:22px; color:var(--muted); margin-top:10px }
+.slide > footer{ position:absolute }
+.cmp-head,.cmp-row{ grid-template-columns:240px 470px 400px 1fr }
+.shot.tilt{ width:110% }
+.qr svg{ width:auto; height:auto; margin:0 auto }
+.contact{ padding:56px 56px 48px }
+.cell.md{ padding:18px 16px; gap:12px } .cell.md b{ font-size:28px }
+.cell.md .dots{ grid-template-columns:repeat(2,24px); grid-auto-rows:24px; gap:12px 14px }
+.s-title .title-grid{ height:calc(100% - 40px) }
+.bottom-line{ max-width:1600px }
+</style></head><body>
+<section class="slide s-title">
+  
+<div class="title-grid">
+  <div>
+    <p class="eyebrow">SXSW EDU · Student Impact Challenge 2027</p>
+    <h1 class="mega">Uzbek Latin in.<br><em>Braille</em> out.</h1>
+    <p class="lede">AlifBraille is a free, open-source tool that gives blind students in Uzbekistan exam materials in the alphabet their exam is actually written in.</p>
+    <p class="byline"><strong>Elshod Kenjayev</strong> · Grade 11 · Presidential School in Tashkent, Uzbekistan</p>
+  </div>
+  <div class="hero-cells">
+    <span class="cells"><span class="cell xl"><b>a</b><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xl"><b>l</b><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xl"><b>i</b><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xl"><b>f</b><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span>
+    <p class="caption">“alif” in 6-dot Braille: the first letter, the first step.</p>
+  </div>
+</div>
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">01 / 10</span></footer>
+</section><section class="slide s-problem">
+  
+<p class="kicker">The problem</p>
+<h2>The alphabet changed.<br>Braille didn’t.</h2>
+<div class="three">
+  <div class="card"><span class="num">01</span><h3>Exams moved to Latin</h3><p>Uzbekistan’s schools, textbooks and university entrance exams now use the Uzbek Latin alphabet.</p></div>
+  <div class="card"><span class="num">02</span><h3>Braille stayed in Cyrillic</h3><p>Most tactile books in specialized school libraries were produced in Cyrillic Braille.</p></div>
+  <div class="card"><span class="num">03</span><h3>Teachers can’t check</h3><p>Many teachers of blind students are sighted and don’t read Braille by touch, so they can’t verify a worksheet.</p></div>
+</div>
+<p class="bottom-line">Blind students get fewer practice papers, later, in the wrong script, for the same exam everyone else takes.</p>
+
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">02 / 10</span></footer>
+</section><section class="slide s-compare">
+  
+<p class="kicker">Why existing tools fail</p>
+<h2>One wrong cell changes the answer.</h2>
+<div class="cmp">
+  <div class="cmp-head"><span>Uzbek word</span><span>Letter-by-letter conversion</span><span>AlifBraille</span><span>What goes wrong</span></div>
+  <div class="cmp-row">
+  <div class="word"><span>o‘g‘il</span><small>“son”</small></div>
+  <div class="bad"><span class="cells"><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span></span></div>
+  <div class="good"><span class="cells"><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i></span></span><span class="cell sm"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span></span></div>
+  <div class="why">Reads the apostrophes as punctuation. O‘ and G‘ are letters.</div>
+</div><div class="cmp-row">
+  <div class="word"><span>shahar</span><small>“city”</small></div>
+  <div class="bad"><span class="cells"><span class="cell sm"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></span></span></div>
+  <div class="good"><span class="cells"><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></span></span></div>
+  <div class="why">Splits sh into two cells. In Uzbek it is one letter.</div>
+</div><div class="cmp-row">
+  <div class="word"><span>2027</span><small>“year”</small></div>
+  <div class="bad"><span class="cells"><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span></span></div>
+  <div class="good"><span class="cells"><span class="cell sm"><span class="dots"><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell sm"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></span></span></div>
+  <div class="why">No number sign, so it reads as the letters b-j-b-g.</div>
+</div>
+</div>
+<p class="note">Braille shown is real output from the AlifBraille engine. Commercial Braille software doesn’t ship Uzbek Latin rules.</p>
+
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">03 / 10</span></footer>
+</section><section class="slide s-solution">
+  
+<div class="split">
+  <div>
+    <p class="kicker">The solution</p>
+    <h2>Three steps.<br>Any teacher.<br>Any computer.</h2>
+    <ol class="steps">
+      <li><b>Type or paste</b> Uzbek Latin text. Braille appears as you type, in about 4 ms.</li>
+      <li><b>Check by ear.</b> The app reads aloud and lights up each cell as it speaks.</li>
+      <li><b>Print</b> a calibrated A4 sheet for swell paper in one click.</li>
+    </ol>
+    <p class="pill-row"><span>Runs in the browser</span><span>Works offline</span><span>Free · MIT license</span></p>
+  </div>
+  <figure class="shot tilt"><img src="img/app.png" alt="AlifBraille app"></figure>
+</div>
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">04 / 10</span></footer>
+</section><section class="slide s-teach">
+  
+<div class="split rev">
+  <figure class="shot"><img src="img/audio.png" alt="Audio check highlighting a Braille cell"></figure>
+  <div>
+    <p class="kicker">Built for sighted teachers</p>
+    <h2>You don’t need to read Braille to check it.</h2>
+    <p class="body">As the text is read aloud, each Braille cell lights up in gold. A teacher hears “b” and sees the matching cell, so mistakes are caught on screen, not by a student’s fingertips on exam day.</p>
+    <div class="callout"><span class="cell md"><b>sh</b><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i></span></span><div><b>sh = one cell</b><br>Uzbek letters like o‘, g‘, sh and ch each map to a single, correct cell.</div></div>
+  </div>
+</div>
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">05 / 10</span></footer>
+</section><section class="slide s-print">
+  
+<div class="split">
+  <div>
+    <p class="kicker">Print-ready</p>
+    <h2>Accurate to the millimetre.</h2>
+    <div class="specs">
+      <div><span>2.5 mm</span>dot pitch</div>
+      <div><span>10 mm</span>line pitch</div>
+      <div><span>A4</span>15 mm margins</div>
+      <div><span>50 mm</span>ruler on every sheet</div>
+    </div>
+    <p class="body">Sheets follow the Marburg Medium standard for swell paper. Printers often shrink pages without asking; the 50 mm ruler shows it <em>before</em> an expensive imported sheet goes through the heater.</p>
+  </div>
+  <figure class="shot"><img src="img/swell.png" alt="Swell paper preview"></figure>
+</div>
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">06 / 10</span></footer>
+</section><section class="slide s-exam">
+  
+<div class="split rev">
+  <figure class="shot"><img src="img/proctor.png" alt="Proctor answer key"></figure>
+  <div>
+    <p class="kicker">Ready for exam day</p>
+    <h2>A full exam toolkit, not just a converter.</h2>
+    <ul class="ticks">
+      <li><b>10-question state exam template</b> in the official multiple-choice format.</li>
+      <li><b>Proctor answer key</b> shows a sighted proctor which line and cell holds each answer.</li>
+      <li><b>Reverse Braille quiz</b> so teachers learn Braille alongside their students.</li>
+      <li><b>WCAG AAA high-contrast mode</b> for low-vision users.</li>
+    </ul>
+  </div>
+</div>
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">07 / 10</span></footer>
+</section><section class="slide s-proof">
+  
+<p class="kicker">Where it stands today</p>
+<h2>Working, tested, and honest about what’s next.</h2>
+<div class="proof">
+  <div class="stats">
+    <div><span>393</span>automated tests passing</div>
+    <div><span>~4 ms</span>to convert 500 characters</div>
+    <div><span>&lt;0.5 s</span>to load</div>
+    <div><span>AAA</span>WCAG contrast mode</div>
+    <div><span>100%</span>offline, in the browser</div>
+    <div><span>$0</span>for schools, MIT license</div>
+  </div>
+  <div class="status">
+    <h3>Done</h3>
+    <ul class="ticks"><li>Live at braille.elshod.xyz</li><li>Open source on GitHub</li><li>Exam template, proctor key, quiz</li></ul>
+    <h3 class="next">Not yet</h3>
+    <ul class="todo"><li>Classroom pilot with blind students</li><li>Review by Braille specialists</li><li>Contracted (Grade 2) Braille</li></ul>
+  </div>
+</div>
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">08 / 10</span></footer>
+</section><section class="slide s-road">
+  
+<p class="kicker">The next 12 months</p>
+<h2>From a working tool to every region.</h2>
+<div class="road">
+  <div class="ph"><span class="when">Months 1–3</span><h3>Tashkent pilot</h3><p>Convert exam practice sets with teachers at a school for visually impaired students.</p></div>
+  <div class="ph"><span class="when">Months 4–6</span><h3>Teachers & library</h3><p>Workshops on convert → check → print, and a free library of practice sheets.</p></div>
+  <div class="ph"><span class="when">Months 7–9</span><h3>Regions</h3><p>Samarkand, the Fergana Valley, Bukhara; more subjects.</p></div>
+  <div class="ph"><span class="when">Months 10–12</span><h3>New alphabets</h3><p>Karakalpak and Kazakh Latin: the next countries changing scripts.</p></div>
+</div>
+<div class="measure"><b>How we’ll measure it:</b><span>schools & teachers</span><span>pages converted</span><span>prep time per worksheet</span><span>errors caught per page</span><span>student reading accuracy</span></div>
+
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">09 / 10</span></footer>
+</section><section class="slide s-ask">
+  
+<div class="ask-grid">
+  <div>
+    <p class="kicker">Why me · What I’m asking for</p>
+    <h2>Every blind student should practice in the same alphabet as their exam.</h2>
+    <p class="body">I’m preparing for the same Latin-script exams as Uzbekistan’s blind students. I speak Uzbek, Russian and English, know both Uzbek alphabets, and built AlifBraille end to end on my own.</p>
+    <ol class="asks">
+      <li><b>A stage</b> to put this in front of educators who can adopt it.</li>
+      <li><b>Introductions</b> to Braille specialists and schools for blind students.</li>
+      <li><b>Mentorship</b> on scaling to other countries changing alphabets.</li>
+    </ol>
+  </div>
+  <div class="contact">
+    <div class="qr"><?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="350" class="segno"><path transform="scale(14)" class="qrline" stroke="#17140f" d="M0 0.5h7m1 0h1m1 0h2m1 0h1m2 0h1m1 0h7m-25 1h1m5 0h1m1 0h1m7 0h1m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m2 0h3m1 0h1m4 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m4 0h3m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h2m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m2 0h3m4 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-17 1h4m3 0h2m-17 1h1m1 0h2m1 0h3m3 0h1m2 0h3m1 0h1m2 0h1m1 0h2m-25 1h1m2 0h2m3 0h1m1 0h2m1 0h1m3 0h1m1 0h1m3 0h1m-23 1h1m4 0h4m1 0h1m2 0h1m1 0h2m-17 1h4m3 0h2m1 0h1m1 0h1m4 0h2m1 0h2m-23 1h1m1 0h2m1 0h2m1 0h1m2 0h5m1 0h2m1 0h1m1 0h3m-21 1h1m3 0h1m2 0h1m1 0h8m3 0h1m-24 1h1m2 0h1m1 0h1m1 0h3m3 0h1m1 0h1m3 0h1m1 0h2m-24 1h1m2 0h1m1 0h1m2 0h1m2 0h2m1 0h7m3 0h1m-22 1h2m1 0h1m1 0h1m3 0h2m1 0h10m-17 1h6m2 0h1m3 0h1m1 0h1m1 0h1m-25 1h7m1 0h2m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-25 1h1m5 0h1m1 0h1m2 0h1m2 0h3m3 0h1m2 0h2m-25 1h1m1 0h3m1 0h1m2 0h4m3 0h6m2 0h1m-25 1h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h1m1 0h2m1 0h5m-25 1h1m1 0h3m1 0h1m1 0h4m1 0h1m1 0h4m1 0h1m1 0h2m-24 1h1m5 0h1m2 0h2m2 0h1m4 0h1m1 0h1m1 0h1m-23 1h7m1 0h2m1 0h1m1 0h2m2 0h8"/></svg>
+</div>
+    <p class="url">braille.elshod.xyz</p>
+    <p class="small">github.com/Elshod09K/alifbraille</p>
+    <p class="small">Elshod Kenjayev · Tashkent, Uzbekistan</p>
+  </div>
+</div>
+  <footer><span class="fmark"><span class="cells"><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span><span class="cell xs"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></span></span></span><span>AlifBraille · SXSW EDU Student Impact Challenge 2027</span><span class="pg">10 / 10</span></footer>
+</section>
+</body></html>
