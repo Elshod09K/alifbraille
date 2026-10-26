@@ -568,37 +568,15 @@ export function initApp(root: HTMLElement): AppInstance {
                   <p>
                     Tactile literacy requires physical touch. AlifBraille connects browser software directly to thermal swell-paper hardware:
                   </p>
-                  <div class="workflow-steps">
-                    <div class="step-card">
-                      <span class="step-num">Step 1</span>
-                      <strong>Latin Input</strong>
-                      <p>Deterministic transliteration of modified letters (o‘, g‘), digraphs (sh, ch), & numerals</p>
-                    </div>
-                    <div class="step-arrow">→</div>
-                    <div class="step-card">
-                      <span class="step-num">Step 2</span>
-                      <strong>Marburg Vector SVG</strong>
-                      <p>Calibrated 2.5mm dot pitch + 50mm ruler + tactile metadata (⠼⠁)</p>
-                    </div>
-                    <div class="step-arrow">→</div>
-                    <div class="step-card">
-                      <span class="step-num">Step 3</span>
-                      <strong>Monochrome Print</strong>
-                      <p>Standard printer deposits pure black carbon ink (#000000) on swell paper</p>
-                    </div>
-                    <div class="step-arrow">→</div>
-                    <div class="step-card">
-                      <span class="step-num">Step 4</span>
-                      <strong>Infrared Fuser (PIAF)</strong>
-                      <p>Carbon ink absorbs heat; microcapsules expand to ~0.5mm physical relief</p>
-                    </div>
-                    <div class="step-arrow">→</div>
-                    <div class="step-card">
-                      <span class="step-num">Step 5</span>
-                      <strong>Student Touch</strong>
-                      <p>Blind student reads raised Braille dots by fingertip in real time</p>
-                    </div>
-                  </div>
+                  <figure class="workflow-diagram">
+                    <img
+                      src="./deliverables/workflow.svg"
+                      alt="The AlifBraille workflow in five steps: 1. a sighted teacher types Uzbek Latin text in the web app; 2. exact-scale SVG export or browser print at Marburg Medium spacing with a 50 mm ruler; 3. the teacher checks the 50 mm ruler on the printed swell paper before heating; 4. the heat fuser makes the capsules under the black dots swell up; 5. a blind student reads the sheet by touch."
+                      width="820"
+                      height="788"
+                      loading="lazy"
+                    />
+                  </figure>
 
                   <!-- High-Resolution Physical Photography Showcase: Post-Heating Swell Sheet -->
                   <div class="physical-photo-showcase">

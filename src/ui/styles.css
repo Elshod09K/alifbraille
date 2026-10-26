@@ -3014,3 +3014,15 @@ body {
   color: var(--color-text-secondary);
 }
 #app dialog[open] { margin: auto; }
+
+/* About dialog: workflow diagram image */
+.workflow-diagram { margin: 16px 0 20px; }
+.workflow-diagram img {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 14px;
+}
+.alif-high-contrast .workflow-diagram img { border: 2px solid #ffffff; }
