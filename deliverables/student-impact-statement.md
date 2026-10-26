@@ -3,8 +3,9 @@
 **Project**: AlifBraille, a deterministic Uzbek Latin-to-Braille transliteration and tactile learning tool  
 **Creator**: Elshod Kenjayev (solo student creator), Grade 11, Presidential School in Tashkent  
 **Location**: Tashkent, Uzbekistan  
-**GitHub**: [Elshod09K](https://github.com/Elshod09K)  
-**Website**: [elshod09k.github.io](https://elshod09k.github.io)  
+**Live app**: [braille.elshod.xyz](https://braille.elshod.xyz)  
+**Pitch deck & demo video**: [braille.elshod.xyz/pitch](https://braille.elshod.xyz/pitch/)  
+**Source code**: [github.com/Elshod09K/alifbraille](https://github.com/Elshod09K/alifbraille)  
 **Competition**: SXSW EDU Student Impact Challenge, Austin, Texas  
 
 ---

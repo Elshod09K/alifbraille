@@ -110,7 +110,7 @@ style: |
 
 **Creator**: Elshod Kenjayev, Grade 11, Presidential School in Tashkent (solo student builder)  
 **Location**: Tashkent, Uzbekistan  
-**Code**: [github.com/Elshod09K](https://github.com/Elshod09K) • **Web**: [elshod09k.github.io](https://elshod09k.github.io)
+**Live app**: [braille.elshod.xyz](https://braille.elshod.xyz) • **Code**: [github.com/Elshod09K/alifbraille](https://github.com/Elshod09K/alifbraille)
 
 ---
 
@@ -258,5 +258,5 @@ Open source, tested        One specialized school         Other regions         
 
 <div style="margin-top: 15px; padding: 12px 20px; background: rgba(30, 41, 59, 0.7); border-radius: 8px;">
 <strong>Solo student creator:</strong> Elshod Kenjayev • Grade 11, Presidential School in Tashkent, Uzbekistan<br>
-<strong>Languages:</strong> Uzbek, English, Russian • <strong>Web:</strong> elshod09k.github.io • <strong>GitHub:</strong> github.com/Elshod09K
+<strong>Languages:</strong> Uzbek, English, Russian • <strong>Live app:</strong> braille.elshod.xyz • <strong>Code:</strong> github.com/Elshod09K/alifbraille
 </div>
