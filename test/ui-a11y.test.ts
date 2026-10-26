@@ -355,11 +355,11 @@ describe('Accessible Web Interface & A11y Suite', () => {
       const outputHeading = root.querySelector<HTMLElement>('#output-heading')!;
       const liveStatus = root.querySelector<HTMLElement>('#a11y-live-status')!;
 
-      expect(tagline.textContent).toContain('O‘zbek lotin alifbosi');
+      expect(tagline.textContent).toContain('O‘zbek lotin matnidan');
 
       langBtn.click();
 
-      expect(tagline.textContent).toContain('Accessible Uzbek Latin-to-Braille');
+      expect(tagline.textContent).toContain('Uzbek Latin to print-ready Braille');
       expect(inputHeading.textContent).toBe('Latin Script Input');
       expect(outputHeading.textContent).toContain('Tactile Braille Grid');
       expect(langBtn.textContent).toContain('O‘zbekcha');
@@ -371,12 +371,12 @@ describe('Accessible Web Interface & A11y Suite', () => {
       root.dispatchEvent(
         new KeyboardEvent('keydown', { key: 'e', altKey: true, bubbles: true, cancelable: true })
       );
-      expect(tagline.textContent).toContain('Accessible Uzbek Latin-to-Braille');
+      expect(tagline.textContent).toContain('Uzbek Latin to print-ready Braille');
 
       root.dispatchEvent(
         new KeyboardEvent('keydown', { key: 'e', altKey: true, bubbles: true, cancelable: true })
       );
-      expect(tagline.textContent).toContain('O‘zbek lotin alifbosi');
+      expect(tagline.textContent).toContain('O‘zbek lotin matnidan');
     });
   });
 

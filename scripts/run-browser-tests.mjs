@@ -779,7 +779,7 @@ async function run() {
     })()
   `);
   console.log('   English pitch mode state:', englishToggleResult);
-  if (!englishToggleResult.tagline.includes('Accessible Uzbek Latin-to-Braille')) {
+  if (!englishToggleResult.tagline.includes('Uzbek Latin to print-ready Braille')) {
     throw new Error(`Tagline did not switch to English (got: "${englishToggleResult.tagline}")`);
   }
   if (englishToggleResult.inputHeading !== 'Latin Script Input') {

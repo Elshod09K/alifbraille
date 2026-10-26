@@ -92,36 +92,40 @@ export function initApp(root: HTMLElement): AppInstance {
 
   const STRINGS = {
     uz: {
-      tagline: 'O‘zbek lotin alifbosi va Brayl taktil tizimi o‘rtasidagi ta’lim ko‘prigi',
+      tagline: 'O‘zbek lotin matnidan chop etishga tayyor Brayl yozuvi',
+      heroEyebrow: 'Bepul · Ochiq kodli · Internetsiz ishlaydi',
+      heroTitle: 'Lotin yozuvi kiradi. <em>Brayl</em> chiqadi.',
+      heroSub: 'Ko‘zi ojiz o‘quvchilar va ularga imtihon materiallarini tayyorlaydigan ko‘zi ochiq o‘qituvchilar uchun.',
+      heroStats: ['393 ta test', '~4 ms / 500 belgi', 'Marburg 2.5 mm', '0 so‘m'],
       skipLink: 'Asosiy matn maydoniga o‘tish',
       presetDefault: '-- Namuna matnni tanlang --',
       presetAria: 'Namuna matn (Alt+P)',
-      highContrast: 'Yuqori Kontrast (AAA)',
+      highContrast: 'Yuqori kontrast',
       highContrastAria: 'Yuqori kontrast rejimini yoqish yoki o‘chirish (Alt+H)',
-      langToggle: '🇺🇸 English Pitch Mode',
+      langToggle: 'English',
       langToggleAria: 'Switch to English interface for international pitch evaluation (Alt+E)',
-      aboutCreatorBtn: '👨‍🎓 Muallif',
+      aboutCreatorBtn: 'Loyiha haqida',
       aboutCreatorAria: 'O‘quvchi muallif, ijtimoiy ta’sir va reja (Alt+A)',
       inputHeading: 'Lotin Yozuvi',
       charCount: (n: number) => `${n} ta belgi`,
       placeholder: 'O‘zbek lotin matnini shu yerga yozing yoki namunani tanlang...',
       inputAria: 'O‘zbek lotin matni kiriting (Alt+I)',
-      outputHeading: 'Taktil Brayl Matritsasi',
+      outputHeading: 'Taktil Brayl',
       outputAria: '6 nuqtali Brayl taktil ko‘rinishi (Alt+O)',
       exportSvg: 'SVG Yuklab Olish',
       exportSvgAria: 'Brayl taktil SVG faylini yuklab olish (Alt+S)',
       print: 'Chop Etish',
       printAria: 'Taktil qog‘ozga chop etish (Alt+C)',
-      previewBtn: '👁️ Simulyatsiya',
+      previewBtn: 'Qog‘oz ko‘rinishi',
       previewBtnAria: 'Taktil qog‘oz va qavariq simulyatsiyasini ko‘rish (Alt+V)',
-      quizBtn: '🎓 Viktorina',
+      quizBtn: 'Viktorina',
       quizBtnAria: 'Brayl viktorinasi va ikki tomonlama tekshiruv (Alt+Q)',
-      tourBtn: '🧭 Swell Qo‘llanma',
+      tourBtn: 'Chop etish qo‘llanmasi',
       tourBtnAria: 'Birinchi taktil chop etish bo‘yicha 3 bosqichli o‘qituvchi qo‘llanmasi (Alt+T)',
-      proctorBtn: '📋 Nazoratchi Kaliti',
+      proctorBtn: 'Nazoratchi kaliti',
       proctorBtnAria: 'Ko‘zi ochiq nazoratchi javoblar kaliti va Brayl katakchalari (Alt+K)',
       tactileCellsBadge: (n: number) => `${n} ta taktil katakcha`,
-      tactilePreviewHint: '📜 Ko‘p qatorli matn • Erkin aylantirish (Scroll) • 2.5mm Marburg',
+      tactilePreviewHint: 'Marburg Medium · 2.5 mm nuqta oralig‘i',
       statusEmpty: 'Matn maydoni bo‘sh. 0 ta belgi.',
       statusRendered: (chars: number, cells: number) =>
         `${chars} ta belgi kiritildi, ${cells} ta taktil brayl katakchasi yaratildi.`,
@@ -136,36 +140,40 @@ export function initApp(root: HTMLElement): AppInstance {
       metaPage: 'Sahifa (Brayl):',
     },
     en: {
-      tagline: 'Accessible Uzbek Latin-to-Braille Tactile Bridge & Learning Platform',
+      tagline: 'Uzbek Latin to print-ready Braille',
+      heroEyebrow: 'Free · Open source · Works offline',
+      heroTitle: 'Uzbek Latin in. <em>Braille</em> out.',
+      heroSub: 'Built for blind students and the sighted teachers who prepare their exam materials.',
+      heroStats: ['393 tests passing', '~4 ms per 500 chars', 'Marburg 2.5 mm dots', '$0 for schools'],
       skipLink: 'Skip to primary text editor',
       presetDefault: '-- Select Sample Text --',
       presetAria: 'Select educational preset (Alt+P)',
-      highContrast: 'High Contrast (AAA)',
+      highContrast: 'High contrast',
       highContrastAria: 'Toggle WCAG AAA high contrast mode (Alt+H)',
-      langToggle: '🇺🇿 O‘zbekcha',
+      langToggle: 'O‘zbekcha',
       langToggleAria: 'O‘zbek tilidagi interfeysga qaytish (Alt+E)',
-      aboutCreatorBtn: '👨‍🎓 About Student Creator',
+      aboutCreatorBtn: 'About',
       aboutCreatorAria: 'About the solo student creator, pilot plan & hardware (Alt+A)',
       inputHeading: 'Latin Script Input',
       charCount: (n: number) => `${n} characters`,
       placeholder: 'Type or paste Uzbek Latin text here, or select a curriculum preset above...',
       inputAria: 'Enter Uzbek Latin text (Alt+I)',
-      outputHeading: 'Tactile Braille Grid (6-Dot Marburg Spec)',
+      outputHeading: 'Tactile Braille Grid',
       outputAria: '6-dot Braille tactile matrix view (Alt+O)',
       exportSvg: 'Download Tactile SVG',
       exportSvgAria: 'Download calibrated Marburg tactile vector SVG file (Alt+S)',
       print: 'Print Swell Sheet',
       printAria: 'Print onto microcapsule swell paper for thermal fuser (Alt+C)',
-      previewBtn: '👁️ Swell Preview',
+      previewBtn: 'Swell preview',
       previewBtnAria: 'Toggle tactile swell paper simulation and margin preview (Alt+V)',
-      quizBtn: '🎓 Braille Quiz',
+      quizBtn: 'Braille quiz',
       quizBtnAria: 'Open Braille reverse quiz and interactive verification (Alt+Q)',
-      tourBtn: '🧭 Swell Print Tour',
+      tourBtn: 'Print guide',
       tourBtnAria: '3-Step First Swell Print Teacher Guide (Alt+T)',
-      proctorBtn: '📋 Proctor Key',
+      proctorBtn: 'Proctor key',
       proctorBtnAria: 'Sighted proctor answer key and Braille cell overlay (Alt+K)',
       tactileCellsBadge: (n: number) => `${n} tactile cells`,
-      tactilePreviewHint: '📜 Multi-line paragraph wrapping • Smooth scroll • 2.5mm Marburg',
+      tactilePreviewHint: 'Marburg Medium · 2.5 mm dot pitch',
       statusEmpty: 'Text editor is empty. 0 characters.',
       statusRendered: (chars: number, cells: number) =>
         `${chars} characters transliterated into ${cells} tactile Braille cells.`,
@@ -218,6 +226,14 @@ export function initApp(root: HTMLElement): AppInstance {
                 </button>
             </div>
           </div>
+          <section class="hero" aria-labelledby="hero-title">
+            <p id="hero-eyebrow" class="hero-eyebrow">${STRINGS.uz.heroEyebrow}</p>
+            <h2 id="hero-title" class="hero-title">${STRINGS.uz.heroTitle}</h2>
+            <p id="hero-sub" class="hero-sub">${STRINGS.uz.heroSub}</p>
+            <ul id="hero-stats" class="hero-stats">
+              ${STRINGS.uz.heroStats.map((t) => `<li>${t}</li>`).join('')}
+            </ul>
+          </section>
           <div class="controls-row">
             <div class="toolbar-primary">
               <div id="audio-controls-container"></div>
@@ -268,6 +284,7 @@ export function initApp(root: HTMLElement): AppInstance {
           </div>
         </header>
 
+
         <main class="workspace-grid" role="main">
           <section class="panel" aria-labelledby="input-heading">
             <div class="panel-header">
@@ -303,6 +320,12 @@ export function initApp(root: HTMLElement): AppInstance {
             ></div>
           </section>
         </main>
+
+        <footer class="app-footer">
+          <span>AlifBraille · Tashkent, Uzbekistan · Elshod Kenjayev</span>
+          <a href="https://github.com/Elshod09K/alifbraille" target="_blank" rel="noopener">GitHub (MIT)</a>
+          <a href="./pitch/">Pitch</a>
+        </footer>
 
         <div id="a11y-live-status" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
@@ -1213,6 +1236,14 @@ export function initApp(root: HTMLElement): AppInstance {
     // Update Header Tagline
     const taglineEl = root.querySelector<HTMLElement>('#header-tagline');
     if (taglineEl) taglineEl.textContent = s.tagline;
+    const heroEyebrowEl = root.querySelector<HTMLElement>('#hero-eyebrow');
+    if (heroEyebrowEl) heroEyebrowEl.textContent = s.heroEyebrow;
+    const heroTitleEl = root.querySelector<HTMLElement>('#hero-title');
+    if (heroTitleEl) heroTitleEl.innerHTML = s.heroTitle;
+    const heroSubEl = root.querySelector<HTMLElement>('#hero-sub');
+    if (heroSubEl) heroSubEl.textContent = s.heroSub;
+    const heroStatsEl = root.querySelector<HTMLElement>('#hero-stats');
+    if (heroStatsEl) heroStatsEl.innerHTML = s.heroStats.map((t) => `<li>${t}</li>`).join('');
 
     // Update Skip Link
     if (skipLink) skipLink.textContent = s.skipLink;

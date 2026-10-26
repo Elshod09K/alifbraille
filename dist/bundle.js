@@ -752,7 +752,7 @@ function setupExportControls(container, getBrailleData, options) {
   previewBtn.className = "export-btn export-btn-preview";
   previewBtn.setAttribute("aria-pressed", "false");
   previewBtn.setAttribute("aria-label", "Taktil qog\u2018oz va qavariq simulyatsiyasini ko\u2018rish (Alt+V)");
-  previewBtn.textContent = "\u{1F441}\uFE0F Simulyatsiya";
+  previewBtn.textContent = "Qog\u2018oz ko\u2018rinishi";
   previewBtn.addEventListener("click", () => {
     const isPressed = previewBtn.getAttribute("aria-pressed") === "true";
     const nextState = !isPressed;
@@ -3397,36 +3397,40 @@ function initApp(root) {
   setupGlobalGestureUnlock();
   const STRINGS = {
     uz: {
-      tagline: "O\u2018zbek lotin alifbosi va Brayl taktil tizimi o\u2018rtasidagi ta\u2019lim ko\u2018prigi",
+      tagline: "O\u2018zbek lotin matnidan chop etishga tayyor Brayl yozuvi",
+      heroEyebrow: "Bepul \xB7 Ochiq kodli \xB7 Internetsiz ishlaydi",
+      heroTitle: "Lotin yozuvi kiradi. <em>Brayl</em> chiqadi.",
+      heroSub: "Ko\u2018zi ojiz o\u2018quvchilar va ularga imtihon materiallarini tayyorlaydigan ko\u2018zi ochiq o\u2018qituvchilar uchun.",
+      heroStats: ["393 ta test", "~4 ms / 500 belgi", "Marburg 2.5 mm", "0 so\u2018m"],
       skipLink: "Asosiy matn maydoniga o\u2018tish",
       presetDefault: "-- Namuna matnni tanlang --",
       presetAria: "Namuna matn (Alt+P)",
-      highContrast: "Yuqori Kontrast (AAA)",
+      highContrast: "Yuqori kontrast",
       highContrastAria: "Yuqori kontrast rejimini yoqish yoki o\u2018chirish (Alt+H)",
-      langToggle: "\u{1F1FA}\u{1F1F8} English Pitch Mode",
+      langToggle: "English",
       langToggleAria: "Switch to English interface for international pitch evaluation (Alt+E)",
-      aboutCreatorBtn: "\u{1F468}\u200D\u{1F393} Muallif",
+      aboutCreatorBtn: "Loyiha haqida",
       aboutCreatorAria: "O\u2018quvchi muallif, ijtimoiy ta\u2019sir va reja (Alt+A)",
       inputHeading: "Lotin Yozuvi",
       charCount: (n) => `${n} ta belgi`,
       placeholder: "O\u2018zbek lotin matnini shu yerga yozing yoki namunani tanlang...",
       inputAria: "O\u2018zbek lotin matni kiriting (Alt+I)",
-      outputHeading: "Taktil Brayl Matritsasi",
+      outputHeading: "Taktil Brayl",
       outputAria: "6 nuqtali Brayl taktil ko\u2018rinishi (Alt+O)",
       exportSvg: "SVG Yuklab Olish",
       exportSvgAria: "Brayl taktil SVG faylini yuklab olish (Alt+S)",
       print: "Chop Etish",
       printAria: "Taktil qog\u2018ozga chop etish (Alt+C)",
-      previewBtn: "\u{1F441}\uFE0F Simulyatsiya",
+      previewBtn: "Qog\u2018oz ko\u2018rinishi",
       previewBtnAria: "Taktil qog\u2018oz va qavariq simulyatsiyasini ko\u2018rish (Alt+V)",
-      quizBtn: "\u{1F393} Viktorina",
+      quizBtn: "Viktorina",
       quizBtnAria: "Brayl viktorinasi va ikki tomonlama tekshiruv (Alt+Q)",
-      tourBtn: "\u{1F9ED} Swell Qo\u2018llanma",
+      tourBtn: "Chop etish qo\u2018llanmasi",
       tourBtnAria: "Birinchi taktil chop etish bo\u2018yicha 3 bosqichli o\u2018qituvchi qo\u2018llanmasi (Alt+T)",
-      proctorBtn: "\u{1F4CB} Nazoratchi Kaliti",
+      proctorBtn: "Nazoratchi kaliti",
       proctorBtnAria: "Ko\u2018zi ochiq nazoratchi javoblar kaliti va Brayl katakchalari (Alt+K)",
       tactileCellsBadge: (n) => `${n} ta taktil katakcha`,
-      tactilePreviewHint: "\u{1F4DC} Ko\u2018p qatorli matn \u2022 Erkin aylantirish (Scroll) \u2022 2.5mm Marburg",
+      tactilePreviewHint: "Marburg Medium \xB7 2.5 mm nuqta oralig\u2018i",
       statusEmpty: "Matn maydoni bo\u2018sh. 0 ta belgi.",
       statusRendered: (chars, cells) => `${chars} ta belgi kiritildi, ${cells} ta taktil brayl katakchasi yaratildi.`,
       statusPresetLoaded: (title, count) => `"${title}" namunasi yuklandi. ${count} ta belgi kiritildi.`,
@@ -3439,36 +3443,40 @@ function initApp(root) {
       metaPage: "Sahifa (Brayl):"
     },
     en: {
-      tagline: "Accessible Uzbek Latin-to-Braille Tactile Bridge & Learning Platform",
+      tagline: "Uzbek Latin to print-ready Braille",
+      heroEyebrow: "Free \xB7 Open source \xB7 Works offline",
+      heroTitle: "Uzbek Latin in. <em>Braille</em> out.",
+      heroSub: "Built for blind students and the sighted teachers who prepare their exam materials.",
+      heroStats: ["393 tests passing", "~4 ms per 500 chars", "Marburg 2.5 mm dots", "$0 for schools"],
       skipLink: "Skip to primary text editor",
       presetDefault: "-- Select Sample Text --",
       presetAria: "Select educational preset (Alt+P)",
-      highContrast: "High Contrast (AAA)",
+      highContrast: "High contrast",
       highContrastAria: "Toggle WCAG AAA high contrast mode (Alt+H)",
-      langToggle: "\u{1F1FA}\u{1F1FF} O\u2018zbekcha",
+      langToggle: "O\u2018zbekcha",
       langToggleAria: "O\u2018zbek tilidagi interfeysga qaytish (Alt+E)",
-      aboutCreatorBtn: "\u{1F468}\u200D\u{1F393} About Student Creator",
+      aboutCreatorBtn: "About",
       aboutCreatorAria: "About the solo student creator, pilot plan & hardware (Alt+A)",
       inputHeading: "Latin Script Input",
       charCount: (n) => `${n} characters`,
       placeholder: "Type or paste Uzbek Latin text here, or select a curriculum preset above...",
       inputAria: "Enter Uzbek Latin text (Alt+I)",
-      outputHeading: "Tactile Braille Grid (6-Dot Marburg Spec)",
+      outputHeading: "Tactile Braille Grid",
       outputAria: "6-dot Braille tactile matrix view (Alt+O)",
       exportSvg: "Download Tactile SVG",
       exportSvgAria: "Download calibrated Marburg tactile vector SVG file (Alt+S)",
       print: "Print Swell Sheet",
       printAria: "Print onto microcapsule swell paper for thermal fuser (Alt+C)",
-      previewBtn: "\u{1F441}\uFE0F Swell Preview",
+      previewBtn: "Swell preview",
       previewBtnAria: "Toggle tactile swell paper simulation and margin preview (Alt+V)",
-      quizBtn: "\u{1F393} Braille Quiz",
+      quizBtn: "Braille quiz",
       quizBtnAria: "Open Braille reverse quiz and interactive verification (Alt+Q)",
-      tourBtn: "\u{1F9ED} Swell Print Tour",
+      tourBtn: "Print guide",
       tourBtnAria: "3-Step First Swell Print Teacher Guide (Alt+T)",
-      proctorBtn: "\u{1F4CB} Proctor Key",
+      proctorBtn: "Proctor key",
       proctorBtnAria: "Sighted proctor answer key and Braille cell overlay (Alt+K)",
       tactileCellsBadge: (n) => `${n} tactile cells`,
-      tactilePreviewHint: "\u{1F4DC} Multi-line paragraph wrapping \u2022 Smooth scroll \u2022 2.5mm Marburg",
+      tactilePreviewHint: "Marburg Medium \xB7 2.5 mm dot pitch",
       statusEmpty: "Text editor is empty. 0 characters.",
       statusRendered: (chars, cells) => `${chars} characters transliterated into ${cells} tactile Braille cells.`,
       statusPresetLoaded: (title, count) => `Preset "${title}" loaded (${count} characters).`,
@@ -3517,6 +3525,14 @@ function initApp(root) {
                 </button>
             </div>
           </div>
+          <section class="hero" aria-labelledby="hero-title">
+            <p id="hero-eyebrow" class="hero-eyebrow">${STRINGS.uz.heroEyebrow}</p>
+            <h2 id="hero-title" class="hero-title">${STRINGS.uz.heroTitle}</h2>
+            <p id="hero-sub" class="hero-sub">${STRINGS.uz.heroSub}</p>
+            <ul id="hero-stats" class="hero-stats">
+              ${STRINGS.uz.heroStats.map((t) => `<li>${t}</li>`).join("")}
+            </ul>
+          </section>
           <div class="controls-row">
             <div class="toolbar-primary">
               <div id="audio-controls-container"></div>
@@ -3567,6 +3583,7 @@ function initApp(root) {
           </div>
         </header>
 
+
         <main class="workspace-grid" role="main">
           <section class="panel" aria-labelledby="input-heading">
             <div class="panel-header">
@@ -3602,6 +3619,12 @@ function initApp(root) {
             ></div>
           </section>
         </main>
+
+        <footer class="app-footer">
+          <span>AlifBraille \xB7 Tashkent, Uzbekistan \xB7 Elshod Kenjayev</span>
+          <a href="https://github.com/Elshod09K/alifbraille" target="_blank" rel="noopener">GitHub (MIT)</a>
+          <a href="./pitch/">Pitch</a>
+        </footer>
 
         <div id="a11y-live-status" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
@@ -4422,6 +4445,14 @@ function initApp(root) {
     const s = STRINGS[currentLang];
     const taglineEl = root.querySelector("#header-tagline");
     if (taglineEl) taglineEl.textContent = s.tagline;
+    const heroEyebrowEl = root.querySelector("#hero-eyebrow");
+    if (heroEyebrowEl) heroEyebrowEl.textContent = s.heroEyebrow;
+    const heroTitleEl = root.querySelector("#hero-title");
+    if (heroTitleEl) heroTitleEl.innerHTML = s.heroTitle;
+    const heroSubEl = root.querySelector("#hero-sub");
+    if (heroSubEl) heroSubEl.textContent = s.heroSub;
+    const heroStatsEl = root.querySelector("#hero-stats");
+    if (heroStatsEl) heroStatsEl.innerHTML = s.heroStats.map((t) => `<li>${t}</li>`).join("");
     if (skipLink) skipLink.textContent = s.skipLink;
     const curVal = presetSelect.value;
     presetSelect.setAttribute("aria-label", s.presetAria);

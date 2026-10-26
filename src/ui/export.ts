@@ -80,7 +80,7 @@ export function setupExportControls(
   previewBtn.className = 'export-btn export-btn-preview';
   previewBtn.setAttribute('aria-pressed', 'false');
   previewBtn.setAttribute('aria-label', 'Taktil qog‘oz va qavariq simulyatsiyasini ko‘rish (Alt+V)');
-  previewBtn.textContent = '👁️ Simulyatsiya';
+  previewBtn.textContent = 'Qog‘oz ko‘rinishi';
 
   previewBtn.addEventListener('click', () => {
     const isPressed = previewBtn.getAttribute('aria-pressed') === 'true';
