@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AlifBraille: Accessible Uzbek Latin-to-Braille tactile bridge for visually impaired students. Deterministic transliteration and WCAG AAA compliance." />
+  <meta name="theme-color" content="#050811" />
+  <title>AlifBraille — O‘zbek Lotin-Brayl Taktil Ta’lim Platformasi</title>
+  <link rel="stylesheet" href="./src/ui/styles.css" />
+  <link rel="stylesheet" href="./src/ui/print.css" media="print" />
+</head>
+<body>
+  <noscript>
+    <div style="padding: 1.5rem; color: #ffff00; background: #000000; border: 2px solid #ffffff; margin: 1rem; text-align: center; font-weight: bold;">
+      AlifBraille taktil transliteratsiya tizimidan to‘liq foydalanish uchun brauzeringizda JavaScript faollashtirilgan bo‘lishi zarur.
+    </div>
+  </noscript>
+  <div id="audio-aria-status" class="sr-only" aria-live="polite"></div>
+  <div id="app"></div>
+  <script type="module" src="./dist/bundle.js"></script>
+</body>
+</html>

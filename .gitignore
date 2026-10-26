@@ -1,0 +1,8 @@
+node_modules/
+dist/*
+!dist/bundle.js
+!dist/bundle.js.map
+coverage/
+*.log
+.DS_Store
+.zafar/

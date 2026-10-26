@@ -1,0 +1,138 @@
+/**
+ * AlifBraille Swell-Paper Browser Print Stylesheet
+ * Optimized for physical swell-form microcapsule heating and tactile embossing.
+ * Standard A4 portrait layout with 15mm margins and pure black-on-white high contrast.
+ * Strict zero-border enforcement ensures infrared fusers (PIAF / Zychem) swell only Braille dots.
+ */
+
+@page {
+  size: A4 portrait;
+  margin: 15mm;
+}
+
+@media print {
+  /* Global reset preventing any focus outline, glow, or box shadow from leaking into swell paper */
+  *,
+  *::before,
+  *::after {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
+
+  :focus,
+  :focus-visible,
+  .tactile-cell--highlighted,
+  .cell-speaking,
+  [data-active-speech="true"] {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-color: transparent !important;
+  }
+
+  /* Hide navigation headers, textareas, preset buttons, skip link, live status, dialogs, and controls */
+  .skip-link,
+  header,
+  .app-header,
+  .controls-row,
+  .export-controls,
+  .panel-actions,
+  #export-controls-container,
+  textarea,
+  #latin-input,
+  .text-editor,
+  select,
+  #preset-select,
+  button,
+  #high-contrast-toggle,
+  #export-svg-btn,
+  #print-sheet-btn,
+  .export-btn,
+  #char-counter,
+  .sr-only,
+  #a11y-live-status,
+  .panel-header,
+  dialog,
+  .impact-modal {
+    display: none !important;
+  }
+
+  /* Hide the input panel entirely */
+  .panel:has(#latin-input),
+  section[aria-labelledby="input-heading"] {
+    display: none !important;
+  }
+
+  /* Reset document and canvas background to pure white for swell paper with zero borders */
+  html,
+  body,
+  .app-container,
+  main,
+  .workspace-grid,
+  .panel,
+  section,
+  .tactile-grid {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    width: 100% !important;
+  }
+
+  /* Marburg-compliant tactile page header metadata for swell-paper print */
+  .tactile-print-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 6mm !important;
+    padding-bottom: 2mm !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Hide character label and braille unicode footer text in tactile cells for pure embossing dots */
+  .tactile-cell-char,
+  .tactile-cell-braille {
+    display: none !important;
+  }
+
+  /* Render high-contrast black tactile Braille dots on pure white background for swell-paper microcapsule heating */
+  .tactile-dot--active {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    border-color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Inactive dots are hidden to prevent microcapsule swell heating */
+  .tactile-dot--inactive {
+    visibility: hidden !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    border: none !important;
+  }
+
+  .tactile-cell {
+    border: none !important;
+    background: transparent !important;
+    padding: 2mm !important;
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  .tactile-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 3.75mm !important;
+  }
+}
