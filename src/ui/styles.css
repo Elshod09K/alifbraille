@@ -3013,3 +3013,4 @@ body {
   border-radius: 14px;
   color: var(--color-text-secondary);
 }
+#app dialog[open] { margin: auto; }
